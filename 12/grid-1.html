@@ -6,9 +6,12 @@
     <title>CSS Grid Layout</title>
     <style>
       #wrapper{
-        display:grid;
-        grid-template-columns: 200px 200px 200px;
-        grid-template-rows:100px;
+        display: grid;
+        grid-template-columns: /*200px 200px 200px;*/ /* 각 열의 너비를 200px로 설정*/
+                               /*1fr 1fr 1fr;*/ /* 각 열이 동일한 비율로 공간을 차지하도록 설정*/
+                               repeat(3, 1fr); /* 3개의 열을 동일한 비율로 생성 */
+        grid-template-rows: /*200px 100px;*/ /* 각 행의 높이를 200px과 100px로 설정 */ 
+                            2fr 1fr; /* 첫번째 행은 두뱅의 높이, 두번째 행은 그 절반의 높이로 설정*/
       }
     .items{
       padding:10px;
